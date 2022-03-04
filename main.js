@@ -16,6 +16,7 @@ function chooseWord(){
 // normal letter keys 
 
 //globals
+const KEYBOARD_ROWS = 3;
 const ROWS = 6;
 let currRow = 1;
 let canMoveToNextRow = false;
@@ -56,6 +57,19 @@ for (let keyboardButton of keyboardButtons){
 	keyboardButton.onclick = () => {
 		writeToRow(currRow, keyboardButton);  
 	};
+}
+
+
+//block the keyboard after the game is over
+function blockKeyboard(){
+	for (let i=1; i<=KEYBOARD_ROWS; i++){
+		const row = document.getElementById(`keyboard-row-${i}`);
+		const letters = row.children;
+
+		for (let letter of letters){
+			letter.disabled = true;
+		}
+	}
 }
 
 // delete key
@@ -144,6 +158,7 @@ function submitWord(){
 	//unpack chosenWord to loop through it and submittedWord at once,
 	//similarly to Python's zip()
 	let chosenWordLetters = [...chosenWord];
+	let correctLetters = 0;
 	
 	chosenWordLetters.forEach((cwLetter, idx) => {
 		let sLetter = submittedWord[idx]; //the letter from submitted word
@@ -153,6 +168,7 @@ function submitWord(){
 		if (sLetter === cwLetter){
 			letter.style.backgroundColor = fullyCorrectLetterColor;
 			letterButton.style.backgroundColor = fullyCorrectLetterColor;
+			correctLetters++;
 		}
 		else if (chosenWordLetters.includes(sLetter)){
 			letter.style.backgroundColor = partiallyCorrectLetterColor;
@@ -163,6 +179,14 @@ function submitWord(){
 		}
 	});
 
+	//spin animation
+	//works on any row other than the last one
+	if (currRow < ROWS){
+		for (let letter of letters){
+			letter.style.animation = "spin-animation 1s";
+		}
+	}
+
 	canMoveToNextRow = true;
 
 	//disable the delete button until moving to the next row
@@ -170,6 +194,12 @@ function submitWord(){
 	//so he can have infinite guesses
 	const deleteButton = document.getElementById('delete-btn');
 	deleteButton.disabled = true;
+
+	if (correctLetters === 5)
+		blockKeyboard();
+
+	if (currRow === ROWS && correctLetters < 5)
+		alert(`The word was: ${chosenWord}`);
 }
 
 const submitButton = document.getElementById('submit-btn');

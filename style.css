@@ -1,3 +1,8 @@
+/* remove the unnecessary scroll bar */
+html {
+	overflow-y: hidden;
+}
+
 /* styling of the overall game */
 
 #game-title {
@@ -82,4 +87,15 @@
 
 	color: rgb(255, 255, 255);
 	background-color: rgb(0, 0, 0);
+}
+
+/* after-submit animation */
+@keyframes spin-animation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
