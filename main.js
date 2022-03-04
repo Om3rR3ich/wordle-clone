@@ -174,4 +174,3 @@ function submitWord(){
 
 const submitButton = document.getElementById('submit-btn');
 submitButton.onclick = submitWord;
-console.log('test');
