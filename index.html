@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<title>Wordle</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+
+	<!-- Choose the word before making the virtual keyboard functional, just in case the code flow breaks -->
+	<body onload=chooseWord()>
+		<h1 id="game-title">Wordle</h1>
+
+		<div id="game-container">
+			<div class="row" id="row-1">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+
+			<div class="row" id="row-2">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+
+			<div class="row" id="row-3">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+
+			<div class="row" id="row-4">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+
+			<div class="row" id="row-5">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+
+			<div class="row" id="row-6">
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+				<div class="letter"></div>
+			</div>
+		</div>
+
+		<!-- virtual keyboard -->
+
+		<div id="keyboard-container">
+
+			<div class="keyboard-row" id="keyboard-row-1">
+				<button class="keyboard-btn">Q</button>
+				<button class="keyboard-btn">W</button>
+				<button class="keyboard-btn">E</button>
+				<button class="keyboard-btn">R</button>
+				<button class="keyboard-btn">T</button>
+				<button class="keyboard-btn">Y</button>
+				<button class="keyboard-btn">U</button>
+				<button class="keyboard-btn">I</button>
+				<button class="keyboard-btn">O</button>
+				<button class="keyboard-btn">P</button>
+			</div>
+
+			<div class="keyboard-row" id="keyboard-row-2">
+				<button class="keyboard-btn">A</button>
+				<button class="keyboard-btn">S</button>
+				<button class="keyboard-btn">D</button>
+				<button class="keyboard-btn">F</button>
+				<button class="keyboard-btn">G</button>
+				<button class="keyboard-btn">H</button>
+				<button class="keyboard-btn">J</button>
+				<button class="keyboard-btn">K</button>
+				<button class="keyboard-btn">L</button>
+
+				<!-- Delete button. On row-2 for styling purposes only -->
+				<button class="material-icons" id="delete-btn">backspace</button>
+			</div>
+
+			<div class="keyboard-row" id="keyboard-row-3">
+				<button class="keyboard-btn">Z</button>
+				<button class="keyboard-btn">X</button>
+				<button class="keyboard-btn">C</button>
+				<button class="keyboard-btn">V</button>
+				<button class="keyboard-btn">B</button>
+				<button class="keyboard-btn">N</button>
+				<button class="keyboard-btn">M</button>
+
+				<!-- Submit button. On row-3 for styling purposes only -->
+				<button type="submit" id="submit-btn">Submit</button>
+			</div>
+			
+
+		</div>
+
+		<script src="main.js"></script>
+
+	</body>
+</html>

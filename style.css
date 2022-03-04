@@ -1,0 +1,85 @@
+/* styling of the overall game */
+
+#game-title {
+	text-align: center;
+	font-family: Georgia, serif;
+	font-size: 7vh;
+}
+
+#game-container, .row {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+#game-container {
+	flex-direction: column;
+	align-items: center;
+}
+
+.row {
+	flex-direction: row;
+	justify-content: center;
+}
+
+.letter {
+	margin: 0.5vw;
+
+	width: 10vh;
+	height: 10vh;
+
+	color: rgb(255, 255, 255);
+
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 0;
+
+	color: rgb(0, 0, 0);
+	text-align: center;
+	font-size: 8vh;
+	font-family: Segue, sans-serif;
+}
+
+
+/* styling the virtual keyboard */
+
+#keyboard-container, .keyboard-row {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+#keyboard-container {
+	flex-direction: column;
+	align-items: left;
+
+	position: relative;
+	top: -50vh;
+}
+
+.keyboard-row {
+	flex-direction: row;
+}
+
+.keyboard-btn {
+	height: 10vh;
+	width: 7.5vh;
+
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+}
+
+/* styling special buttons */
+
+#submit-btn {
+	width: 22.5vh; /* x3 the width of keyboard-btn */
+
+	background-color: rgb(24, 222, 47);
+	border-color: rgb(22, 184, 41);
+
+	font-weight: bold;
+}
+
+#delete-btn {
+	width: 7.5vh; /* the width of keyboard-btn */
+
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+}
